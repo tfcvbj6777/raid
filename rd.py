@@ -8,10 +8,11 @@ def spam():
             pass
 
 client = amino.Client()
-client.login(email = '', password = '') #Ввести данные от акка
-link = '' #Ввести ссылку на чат
-message = '' #Ввести рейд-сообщение
-msgType = 0 #Ввести тип сообщения(по умолчанию: 0)
+em = str(input('Введите email: '))
+par = str(input('Введите passowrd: '))
+mes = str(input('Введите текст: '))
+msgType = int(input('введите тип сообщения: '))
+
 info = client.get_from_code(link).json["extensions"]["linkInfo"]
 com = info["ndcId"]
 chat = info["objectId"]
