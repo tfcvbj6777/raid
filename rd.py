@@ -12,7 +12,7 @@ em = str(input('Введите email: '))
 par = str(input('Введите passowrd: '))
 mes = str(input('Введите текст: '))
 msgType = int(input('введите тип сообщения: '))
-link = int(input('ссылка на чат: '))
+link = chatlink(input('ссылка на чат: '))
 
 info = client.get_from_code(link).json["extensions"]["linkInfo"]
 com = info["ndcId"]
