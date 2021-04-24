@@ -12,14 +12,18 @@ em = str(input('Введите email: '))
 par = str(input('Введите passowrd: '))
 mes = str(input('Введите текст: '))
 msgType = int(input('введите тип сообщения: '))
-link = chatlink(input('ссылка на чат: '))
+link = chatlink(input('ссылка на чат: ')
+
+chatinfo=client.get_from_code(chatlink)
+chatId=chatinfo.objectId
+comId=chatinfo.path[1:chatinfo.path.index('/')]
 
 info = client.get_from_code(link).json["extensions"]["linkInfo"]
 com = info["ndcId"]
 chat = info["objectId"]
 try: client.join_community(comId = com)
 except: pass
-subclient = amino.SubClient(comId = com, profile = client.profile)
+subclient=amino.SubClient(comId=comId, profile=client.profile)
 subclient.join_chat(chatId = chat)
 Thread(target = spam).start()
 Thread(target = spam).start()
