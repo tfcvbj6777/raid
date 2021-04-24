@@ -14,10 +14,9 @@ mes = str(input('Введите текст: '))
 msgType = int(input('введите тип сообщения: '))
 link = chatlink(input('ссылка на чат: ')
 
-chatinfo=client.get_from_code(chatlink)
 chatId=chatinfo.objectId
 comId=chatinfo.path[1:chatinfo.path.index('/')]
-
+chatinfo=client.get_from_code(chatlink)
 com = info["ndcId"]
 chat = info["objectId"]
 try: client.join_community(comId = com)
