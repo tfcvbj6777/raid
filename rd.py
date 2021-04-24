@@ -18,7 +18,6 @@ chatinfo=client.get_from_code(chatlink)
 chatId=chatinfo.objectId
 comId=chatinfo.path[1:chatinfo.path.index('/')]
 
-info = client.get_from_code(link).json["extensions"]["linkInfo"]
 com = info["ndcId"]
 chat = info["objectId"]
 try: client.join_community(comId = com)
